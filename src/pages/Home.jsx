@@ -30,7 +30,7 @@ const Home = () => {
   const [islandP, setIslandP] = useState(null)
   const [test1, settest1] = useState(false)
   const [navItem, setNavItem] = useState('codee')
-  const [isPlayingMusic, setIsPlayingMusic] = useState(true)
+  const [isPlayingMusic, setIsPlayingMusic] = useState(false)
  
   const islandTestRef = useRef(null);
 
