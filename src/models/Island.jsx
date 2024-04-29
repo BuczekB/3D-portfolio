@@ -103,22 +103,22 @@ return (
         <a.group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
           <a.group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
             <mesh
-              castShadow
-              receiveShadow
+              
+              
               geometry={nodes.about.geometry}
               material={materials['Material.003']}
               position={[-1.351, 0.309, 0]}
             />
             <mesh
-              castShadow
-              receiveShadow
+              
+              
               geometry={nodes.figma.geometry}
               material={materials['Material.003']}
               position={[0, -0.098, 0]}
             />
             <mesh
-              castShadow
-              receiveShadow
+              
+              
               geometry={nodes.projects.geometry}
               material={materials['Material.003']}
               position={[0, 0.065, 0.572]}
@@ -130,95 +130,95 @@ return (
         <a.group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
           <a.group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
             <mesh
-              castShadow
-              receiveShadow
+              
+              
               geometry={nodes.stone_tile_medium_A005_scene_foliage_ground_0.geometry}
               material={materials['scene_foliage_ground.001']}
             />
             <mesh
-              castShadow
-              receiveShadow
+              
+              
               geometry={nodes.stone_tile_medium_A005_scene_foliage_ground_0001.geometry}
               material={materials['scene_foliage_ground.001']}
             />
             <mesh
-              castShadow
-              receiveShadow
+              
+              
               geometry={nodes.stone_tile_medium_A005_scene_foliage_ground_0002.geometry}
               material={materials['scene_foliage_ground.001']}
             />
             <mesh
-              castShadow
-              receiveShadow
+              
+              
               geometry={nodes.stone_tile_medium_A005_scene_foliage_ground_0003.geometry}
               material={materials['scene_foliage_ground.001']}
             />
             <mesh
-              castShadow
-              receiveShadow
+              
+              
               geometry={nodes.stone_tile_medium_A005_scene_foliage_ground_0004.geometry}
               material={materials['scene_foliage_ground.001']}
             />
             <mesh
-              castShadow
-              receiveShadow
+              
+              
               geometry={nodes.stone_tile_medium_A005_scene_foliage_ground_0005.geometry}
               material={materials['scene_foliage_ground.001']}
             />
             <mesh
-              castShadow
-              receiveShadow
+              
+              
               geometry={nodes.stone_tile_medium_A005_scene_foliage_ground_0006.geometry}
               material={materials['scene_foliage_ground.001']}
             />
           </a.group>
           <a.group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
             <mesh
-              castShadow
-              receiveShadow
+              
+              
               geometry={nodes.stone_tile_medium_A007_scene_tree_canopy_0.geometry}
               material={materials['scene_tree_canopy.001']}
             />
             <mesh
-              castShadow
-              receiveShadow
+              
+              
               geometry={nodes.stone_tile_medium_A007_scene_tree_canopy_0001.geometry}
               material={materials['scene_tree_canopy.001']}
             />
             <mesh
-              castShadow
-              receiveShadow
+              
+              
               geometry={nodes.stone_tile_medium_A007_scene_tree_canopy_0002.geometry}
               material={materials['scene_tree_canopy.001']}
             />
           </a.group>
           <mesh
-            castShadow
-            receiveShadow
+            
+            
             geometry={nodes.stone_tile_medium_A001_scene_rocks_0.geometry}
             material={materials['scene_rocks.001']}
             rotation={[-Math.PI / 2, 0, 0]}
             scale={100}
           />
           <mesh
-            castShadow
-            receiveShadow
+            
+            
             geometry={nodes.stone_tile_medium_A004_scene_tree_terrain_0.geometry}
             material={materials['scene_tree_terrain.001']}
             rotation={[-Math.PI / 2, 0, 0]}
             scale={100}
           />
           <mesh
-            castShadow
-            receiveShadow
+            
+            
             geometry={nodes.stone_tile_medium_A006_scene_props_0.geometry}
             material={materials['scene_props.001']}
             rotation={[-Math.PI / 2, 0, 0]}
             scale={100}
           />
           <mesh
-            castShadow
-            receiveShadow
+            
+            
             geometry={nodes.stone_tile_medium_A008_scene_stones_0.geometry}
             material={materials['scene_stones.001']}
             rotation={[-Math.PI / 2, 0, 0]}
@@ -227,32 +227,32 @@ return (
         </a.group>
       </a.group>
       <mesh
-        castShadow
-        receiveShadow
+        
+        
         geometry={nodes.Text.geometry}
         material={materials['Material.003']}
         position={[-1.754, 5.73, -7.795]}
         rotation={[Math.PI / 2, 0, 1.676]}
       />
       <mesh
-        castShadow
-        receiveShadow
+        
+        
         geometry={nodes.Text001.geometry}
         material={materials['Material.004']}
         position={[-0.252, 5.638, -4.857]}
         rotation={[Math.PI / 2, 0, -2.025]}
       />
       <mesh
-        castShadow
-        receiveShadow
+        
+        
         geometry={nodes.Text002.geometry}
         material={materials['Material.005']}
         position={[-1.096, 6.139, -8.309]}
         rotation={[Math.PI / 2, 0, -0.908]}
       />
       <mesh
-        castShadow
-        receiveShadow
+        
+        
         geometry={nodes.Plane001.geometry}
         material={materials['Material.007']}
         position={[-0.596, 5.089, -5.362]}
@@ -261,8 +261,8 @@ return (
         name={'code'}
       />
       <mesh
-        castShadow
-        receiveShadow
+        
+        
         geometry={nodes.Plane002.geometry}
         material={materials['Material.008']}
         position={[-0.464, 5.513, -9.223]}
@@ -271,8 +271,8 @@ return (
         name={'projects'}
       />
       <mesh
-        castShadow
-        receiveShadow
+        
+        
         geometry={nodes.Plane003.geometry}
         material={materials['Material.009']}
         position={[-1.809, 5.372, -6.962]}
