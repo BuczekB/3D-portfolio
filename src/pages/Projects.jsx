@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 
 
@@ -19,7 +19,11 @@ import { Link } from 'react-router-dom'
 
 const Projects = () => {
 
+  const [contentHeight, setContentHeight] = useState(0);
+
   const projectListRef = useRef(null);
+
+  const projectHightRef = useRef(null);
 
  
 
@@ -60,6 +64,10 @@ const listOfProjects = arrayOfProjects.map((item) =>{
 
 
 useEffect(() => {
+  if (projectHightRef.current) {
+    setContentHeight(projectHightRef.current.clientHeight);
+  }
+
   gsap.from(projectListRef.current.children, {
     duration: 1,
     opacity: 0,
@@ -67,11 +75,11 @@ useEffect(() => {
     stagger: 0.3, 
     ease: 'power3.out', 
   });
-}, [arrayOfProjects]);
+}, []);
 
   return (
-    <section  className=" w-full h-screen ">
-       <div className='w-screen h-screen bg-transparent flex flex-col justify-center items-center absolute top-0 left-0 z-10'>
+    <section  className=" w-full h-screen overflow-y-hidden "  ref={projectHightRef} >
+       <div   className='w-screen h-screen bg-transparent flex flex-col justify-center items-center absolute top-0 left-0 z-10'>
       <ButtonBack></ButtonBack>
       <h1 className='text-3xl md:text-6xl font-bold mb-8 custom-shadow'>  Programming Projects</h1>
       <div
@@ -81,7 +89,7 @@ useEffect(() => {
         {listOfProjects}
       </div>
        </div>
-      <BackgroundSky/>
+       <BackgroundSky contentHeight={contentHeight} />
     </section>
   )
 }
