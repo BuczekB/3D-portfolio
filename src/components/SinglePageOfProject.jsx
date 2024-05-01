@@ -31,7 +31,7 @@ const SinglePageOfProject = ({name, about, text, imgF, imgS, imgT, link}) => {
             <h2 className='text-3xl font-bold mb-8 text-center p-10' >{about}</h2>
             <div className='flex flex-col items-center'>
                 <h2 className='text-4xl font-bold mb-8'>About</h2>
-                <p className='text-lg font-bold w-1/3 text-center' >
+                <p className='text-lg font-bold w-2/3 text-center' >
                 {text}
                 </p>
             </div>

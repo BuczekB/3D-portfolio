@@ -20,13 +20,15 @@ function About() {
 
   const projectListRef = useRef(null);
 
+  const projectHightRef = useRef(null);
+
  
 
 
   useEffect(() => {
 
-    if (projectListRef.current) {
-      setContentHeight(projectListRef.current.clientHeight);
+    if (projectHightRef.current) {
+      setContentHeight(projectHightRef.current.clientHeight);
     }
 
 
@@ -43,8 +45,8 @@ function About() {
     <section className="w-full h-auto relative 	" >
       <div className="w-full h-auto bg-transparent flex justify-center items-center absolute top-0 left-0 z-10 	"   >
         <ButtonBack />
-        <div className="w-5/6 xl:w-4/6 h-auto flex 	pt-10" ref={projectListRef}  >
-          <div className="flex flex-col justify-center text-base xl:text-xl text-center font-medium 	"  >
+        <div className="w-5/6 xl:w-4/6 h-auto flex 	pt-10" ref={projectHightRef}  >
+          <div className="flex flex-col justify-center text-base xl:text-xl text-center font-medium 	" ref={projectListRef}  >
             <h1 className="text-2xl xl:text-5xl font-bold  mb-2 xl:mb-8 xl:mt-8  ">About Jakub Buczynski</h1>
             <p>
               Hi, my name is Jakub and I'm searching for my first job as a programmer. My coding journey began a
