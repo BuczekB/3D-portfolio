@@ -1,7 +1,8 @@
 import { Route, BrowserRouter as Router, Routes} from 'react-router-dom'
 
 import Navbar from './components/Navbar'
-import {Home, About, Projects, Code, DealerApp, FakeShop, CryptoApp, WeatherApp, BJGame, Website} from './pages/index'
+import {Home, About, Projects, Code, DealerApp, FakeShop, CryptoApp, WeatherApp, BJGame, Website, DisabledWeb} from './pages/index'
+
 
 const App = () => {
   return (
@@ -19,6 +20,8 @@ const App = () => {
           <Route path='/3D-portfolio/projects/WeatherApp' element={<WeatherApp/>} />
           <Route path='/3D-portfolio/projects/BJGame' element={<BJGame/>} />
           <Route path='/3D-portfolio/projects/Website' element={<Website/>} />
+          <Route path='/3D-portfolio/projects/FakeShop/DisabledWeb' element={<DisabledWeb/>} />
+          <Route path='/3D-portfolio/DisabledWeb' element={<DisabledWeb/>} />
         </Routes>
       </Router>
     </main>

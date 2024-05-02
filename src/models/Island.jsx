@@ -19,7 +19,7 @@ import islandScene from '../assets/3d/island.glb'
 
 import { useNavigate } from "react-router-dom";
 
-const Island = forwardRef(({isRotating, setIsRotating, setCurrentStage,setIslandP, ...props}, ref) => {
+const Island = forwardRef(({setIsIslandLoaded, isRotating, setIsRotating, setCurrentStage, ...props}, ref) => {
 
   const navigate = useNavigate();
 
@@ -28,7 +28,7 @@ const Island = forwardRef(({isRotating, setIsRotating, setCurrentStage,setIsland
 
   const IslandRef = useRef(null)
 
- 
+  
 
 
 const {gl, viewport} = useThree()
@@ -36,6 +36,21 @@ const { nodes, materials } = useGLTF(islandScene);
 
 
 
+const calculateCenter = () => {
+  const box = new THREE.Box3().setFromObject(IslandRef.current);
+  const center = new THREE.Vector3();
+  box.getCenter(center);
+  return center;
+};
+
+
+useEffect(() => {
+
+  const center = calculateCenter();
+  console.log('Koordynaty środka:', center.x, center.y, center.z);
+  setIsIslandLoaded(true)
+
+},[IslandRef])
 
 
 

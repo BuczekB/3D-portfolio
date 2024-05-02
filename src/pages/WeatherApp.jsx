@@ -19,7 +19,8 @@ import {
         imgF: imageWeatherAppFirst,
         imgS: imageWeatherAppSecound,
         imgT: imageWeatherAppThird,
-        link: 'https://buczekb.github.io/weatherApp-useApi/'
+        link: 'https://buczekb.github.io/weatherApp-useApi/',
+        target: '_blank'
       }
 
       return (

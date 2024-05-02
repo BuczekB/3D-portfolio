@@ -16,7 +16,8 @@ const data = {
   imgF: imageFakeShopFirst,
   imgS: imageFakeShopSecound,
   imgT: imageFakeShopThird,
-  link: 'https://buczekb.github.io/new-shop/'
+  link: '/3D-portfolio/projects/FakeShop/DisabledWeb',
+  target: '_self'
 }
 
 const FakeShop = () => {

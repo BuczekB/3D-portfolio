@@ -6,7 +6,7 @@ import backgroundImage from '../assets/images/skybg.jpg';
 
 
 
-const SinglePageOfProject = ({name, about, text, imgF, imgS, imgT, link}) => {
+const SinglePageOfProject = ({name, about, text, imgF, imgS, imgT, link, target}) => {
 
   const projectListRef = useRef(null);
 
@@ -36,7 +36,7 @@ const SinglePageOfProject = ({name, about, text, imgF, imgS, imgT, link}) => {
                 </p>
             </div>
             <div >
-            <a href={link} target='blank' >
+            <a href={link} target='_blank' >
                 <button className=' hover:scale-105 transition-transform items-center justify-center flex m-10 font-bold mb-24 h-10 w-48 backdrop-blur-sm bg-gray-200 bg-opacity-60 rounded-lg  shadow-lg shadow-gray-500/50'>
                    <span className='mr-10 ml-10 text-2xl'  >Go to</span>
                 </button>

@@ -1,6 +1,7 @@
 import {Canvas, useThree, useFrame, extend} from '@react-three/fiber'
 
-import { useState, Suspense, useRef, useEffect } from 'react'
+
+import { useState, Suspense, useRef, useEffect, useLayoutEffect } from 'react'
 
 import soundoff from '../assets/icons/soundoff.png'
 import soundon from '../assets/icons/soundon.png'
@@ -19,6 +20,7 @@ import Navbar from '../components/Navbar'
 
 import sakura from '../assets/sakura.mp3'
 
+
 extend({OrbitControls})
 
 const Home = () => {
@@ -31,8 +33,18 @@ const Home = () => {
   const [test1, settest1] = useState(false)
   const [navItem, setNavItem] = useState('codee')
   const [isPlayingMusic, setIsPlayingMusic] = useState(false)
+
+  const [isIslandLoaded, setIsIslandLoaded] = useState(false);
+
+  const [targetPosition, setTargetPosition] = useState([5.917308148036672, -0.9774701724883729, -13.942643045169257]);
+  const [isControlsInitialized, setIsControlsInitialized] = useState(false);
+  
  
   const islandTestRef = useRef(null);
+
+  const islandLoadingRef = useRef(null);
+
+  
 
  useEffect(() =>{
   if(isPlayingMusic){
@@ -44,7 +56,7 @@ const Home = () => {
   }
  },[isPlayingMusic])
   
-  const Controls = ({navItem}) => {
+  const Controls = ({navItem, targetPosition }) => {
     const { camera, gl } = useThree();
     const controlsRef = useRef(null);
 
@@ -57,44 +69,91 @@ const Home = () => {
 
     //window.addEventListener('click', handleWindowClick);
 
-
     
     
+    
 
-    useEffect( () => {
-     const islandPositionVector = new THREE.Vector3(...islandPosition);
-     controlsRef.current.target = new THREE.Vector3
-     (5.917308148036672,
-      -0.9774701724883729,
-      -13.942643045169257
-      )
-       controlsRef.current.autoRotateSpeed = 1
-     controlsRef.current.minDistance = 6
-     controlsRef.current.maxDistance = 20
-     controlsRef.current.autoRotate = true;
-     camera.lookAt(0, 0, 0)
-     controlsRef.current.update();
+    /**useEffect( () => {
 
+     
+      console.log(controlsRef.current.target,'after');
+      
 
+      if(islandTestRef.current){
+        setIsIslandLoaded(true)
+        console.log(islandTestRef.current);
+      }
 
+      
+     if(isIslandLoaded){
+      controlsRef.current.target = new THREE.Vector3
+      (5.917308148036672,
+       -0.9774701724883729,
+       -13.942643045169257
+       )
+        controlsRef.current.autoRotateSpeed = 1
+      controlsRef.current.minDistance = 6
+      controlsRef.current.maxDistance = 20
+      controlsRef.current.autoRotate = true;
+      //camera.lookAt(0, 0, 0)
+      //controlsRef.current.update();
+
+     
+ 
+     } 
+
+     
   
+     
+     console.log(controlsRef.current.target,'before');
+
+     
+
+     lookAtPoint(navItem)
     
-   lookAtPoint(navItem)
+   
  
       
      
-    }, [islandTestRef, navItem]);
+    }, [isIslandLoaded, navItem]); */
+
 
 
 
   
-    
+   /**  useFrame(() => {
+      console.log(controlsRef.current);
+      controlsRef.current.update();
 
+      
+    });*/
+   
+    
+    useEffect(() => {
+      if (isIslandLoaded && controlsRef.current && targetPosition) {
+        //controlsRef.current.target.set(targetPosition[0], targetPosition[1], targetPosition[2]);
+       // controlsRef.current.update();
+       controlsRef.current.target = new THREE.Vector3
+      (5.917308148036672,
+       -0.9774701724883729,
+       -13.942643045169257
+       )
+        controlsRef.current.autoRotateSpeed = 1
+      controlsRef.current.minDistance = 6
+      controlsRef.current.maxDistance = 20
+      controlsRef.current.autoRotate = true;
+      }
+
+      lookAtPoint(navItem)
+
+    }, [targetPosition, isIslandLoaded, navItem]);
   
     useFrame(() => {
-      
-      controlsRef.current.update();
+      if (controlsRef.current) {
+        controlsRef.current.update();
+      }
     });
+   
 
 
     const lookAtPoint = (name) =>{
@@ -176,7 +235,7 @@ const Home = () => {
       camera={{ fov: 75, near: 0.1, far: 1000, position: [0, 0, 5] }}
       >
         
-        <Suspense fallback={<Loader/>}>
+        
 
       
         <directionalLight position={[1,1,1]} intensity={2}/>
@@ -186,9 +245,13 @@ const Home = () => {
        <Sky 
        isRotating={isRotating}
        />
+       <Suspense   fallback={<Loader />}>
        <Island
-       ref={islandTestRef}
-       //setIslandP = {setIslandP}
+        
+        setIsIslandLoaded={setIsIslandLoaded}
+
+      ref={islandTestRef}
+       
        position = {islandPosition}
        scale = {islandScale}
        rotation = {islandRotation}
@@ -196,10 +259,10 @@ const Home = () => {
        setIsRotating = {setIsRotating}
        setCurrentStage={setCurrentStage}
        />
-        </Suspense>
-        <Controls
-        navItem={navItem}
-        />
+       
+       {isIslandLoaded && <Controls  navItem={navItem} targetPosition={targetPosition} />}
+        
+        </Suspense> 
       </Canvas>
       <div className='absolute bottom-2 left-2'>
       <img 

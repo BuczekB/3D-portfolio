@@ -9,5 +9,6 @@ import CryptoApp from './CryptoApp'
 import WeatherApp from './WeatherApp'
 import BJGame from './BJGame'
 import Website from './Website'
+import DisabledWeb from './DisabledWeb'
 
-export {Home, About, Projects, Code, DealerApp, FakeShop, CryptoApp, WeatherApp, BJGame, Website}
+export {Home, About, Projects, Code, DealerApp, FakeShop, CryptoApp, WeatherApp, BJGame, Website, DisabledWeb}

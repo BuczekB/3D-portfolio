@@ -19,7 +19,8 @@ import {
         imgF: imageCryptoFirst,
         imgS: imageCryptoSecound,
         imgT: imageCryptoThird,
-        link: 'https://buczekb.github.io/crypto-app/'
+        link: 'https://buczekb.github.io/crypto-app/',
+        target: '_blank'
       }
 
       return (

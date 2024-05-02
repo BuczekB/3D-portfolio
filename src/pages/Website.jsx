@@ -19,7 +19,8 @@ import {
         imgF: imageWebsiteFirst,
         imgS: imageWebsiteSecound,
         imgT: imageWebsiteThird,
-        link: 'https://buczekb.github.io/website-FRYZ/'
+        link: 'https://buczekb.github.io/website-FRYZ/',
+        target: '_blank'
       }
 
       return (

@@ -19,7 +19,8 @@ import {
         imgF: imageBJFirst,
         imgS: imageBJSecound,
         imgT: imageBJThird,
-        link: 'https://buczekb.github.io/game-bj/'
+        link: 'https://buczekb.github.io/game-bj/',
+        target: '_blank'
       }
 
       return (

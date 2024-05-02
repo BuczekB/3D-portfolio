@@ -19,7 +19,8 @@ import {
         imgF: imageDealerAppFirst,
         imgS: imageDealerAppSecound,
         imgT: imageDealerAppThird,
-        link: 'https://buczekb.github.io/dealer-app/'
+        link: 'https://buczekb.github.io/dealer-app/',
+        target: '_blank'
       }
 
       return (
