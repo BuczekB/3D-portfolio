@@ -20,7 +20,7 @@ import {
         imgS: imageDealerAppSecound,
         imgT: imageDealerAppThird,
         link: 'https://buczekb.github.io/dealer-app/',
-        target: '_blank'
+        target: '_blank',
       }
 
       return (
@@ -33,6 +33,7 @@ import {
         imgS={data.imgS}
         imgT={data.imgT}
         link={data.link}
+        target={data.target}
         />
         </>
       )

@@ -12,6 +12,8 @@ import {
 
     const WeatherApp = () => {
 
+      console.log(data.target);
+
       const data = {
         name: 'WeatherApp',
         about: 'Simple application to check weather wherver you want',
@@ -33,6 +35,7 @@ import {
         imgS={data.imgS}
         imgT={data.imgT}
         link={data.link}
+        target={data.target}
         />
         </>
       )

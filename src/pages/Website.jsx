@@ -33,6 +33,7 @@ import {
         imgS={data.imgS}
         imgT={data.imgT}
         link={data.link}
+        target={data.target}
         />
         </>
       )
