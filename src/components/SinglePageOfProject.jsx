@@ -1,15 +1,37 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 
 import ButtonBack from '../components/ButtonBack'
 import backgroundImage from '../assets/images/skybg.jpg';
+import { useNavigate } from 'react-router-dom';
 
 
 
-const SinglePageOfProject = ({name, about, text, imgF, imgS, imgT, link, target, test}) => {
+const SinglePageOfProject = ({name, about, text, imgF, imgS, imgT, link, target}) => {
 
   const projectListRef = useRef(null);
+  const [isSelf, setIsSelf] = useState(false)
+  const navigate = useNavigate()
 
+
+  useEffect(()=>{
+
+    console.log(target);
+
+
+    if(target === '_self'){
+      setIsSelf(true)
+    }else{
+      setIsSelf(false)
+    }
+  },[target])
+
+  const navigateSelf = () =>{
+    if(isSelf){
+      navigate('/3D-portfolio/projects/FakeShop/DisabledWeb')
+    }
+  }
+ 
 
   console.log(link);
 
@@ -38,7 +60,7 @@ const SinglePageOfProject = ({name, about, text, imgF, imgS, imgT, link, target,
                 </p>
             </div>
             <div >
-            <a href={link} target={target} >
+            <a href={isSelf? false : link } target={target} onClick={navigateSelf}>
                 <button className=' hover:scale-105 transition-transform items-center justify-center flex m-10 font-bold mb-24 h-10 w-48 backdrop-blur-sm bg-gray-200 bg-opacity-60 rounded-lg  shadow-lg shadow-gray-500/50'>
                    <span className='mr-10 ml-10 text-2xl'  >Go to</span>
                 </button>

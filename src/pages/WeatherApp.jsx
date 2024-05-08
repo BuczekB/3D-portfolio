@@ -12,7 +12,7 @@ import {
 
     const WeatherApp = () => {
 
-      console.log(data.target);
+   
 
       const data = {
         name: 'WeatherApp',
